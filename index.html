@@ -32,18 +32,21 @@
             <div class="card-grid">
                 <div class="cat-cards">
                     <img src="images/Meenad's-signature.jpg" alt="Meenad's Signature">
+                    <span class="card-title">Meenad's Signature</span>
                 </div>
 
                 <div class="cat-cards">
                     <img src="images/Hano.jpg" alt="Hano">
+                    <span class="card-title">Hano</span>
                 </div>
 
                 <div class="cat-cards">
                     <img src="images/Meenad's-jollof.jpg" alt="Meenad's Jollof">
+                    <span class="card-title">Meenad's Jollof</span>
                 </div>
             </div>
 
-            <a href="#" class="explore-btn">Explore →</a>
+            <a href="#" class="order-btn">Order now →</a>
         </section>
     </main>
     <!-- <<<<<<<<<<<<<<<<FOOTER>>>>>>>>>>>>>>> -->
@@ -77,6 +80,24 @@
             <p>Made with <span class="heart">♥</span> for fragrance lovers.</p>
         </div>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll(".s2-catalogue, .footer-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 
 </html>
