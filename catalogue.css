@@ -28,7 +28,8 @@ header {
 }
 
 .logo img {
-    width: 100px;
+    width: 140px;
+    margin-left: 50px;
 }
 
 nav {
@@ -117,15 +118,15 @@ nav a:hover {
 .catalogue-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
     margin-top: 40px;
-    width: 90%;
-    max-width: 1200px;
+    width: 85%;
+    max-width: 1050px;
     margin: 30px auto 0;
 }
 
 .catalogue-item {
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
     background: #000000;
     border: 1px solid #d4af37;
@@ -135,14 +136,19 @@ nav a:hover {
 
 .catalogue-item img {
     width: 100%;
-    height: 350px;
+    height: 300px;
     object-fit: cover;
     display: block;
 }
 
 .catalogue-item span {
-    padding: 15px 10px;
-    font-size: 18px;
+    padding: 10px 8px;
+    font-size: 16px;
     color: #d4af37;
     text-align: center;
+}
+
+.catalogue-link {
+    text-decoration: none;
+    color: inherit;
 }
