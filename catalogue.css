@@ -99,8 +99,7 @@ nav a:hover {
     background: linear-gradient(180deg,
             #8c6a24,
             #d4af37,
-            #f5d77a,
-            #d4af37,
+            #fdedbc,
             #8c6a24);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -151,4 +150,89 @@ nav a:hover {
 .catalogue-link {
     text-decoration: none;
     color: inherit;
+}
+
+/* ================= FOOTER ================= */
+
+.footer-section {
+    margin-top: 50px;
+    padding: 70px 8% 25px;
+    border-top: 1px solid rgba(212, 175, 55, 0.384);
+}
+
+.footer-context {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-context h2 {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background: linear-gradient(180deg,
+            #8c6a24,
+            #d4af37,
+            #fdedbc,
+            #8c6a24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-context p {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-bottom: 50px;
+}
+
+.sngl-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sngl-footer h3 {
+    margin-bottom: 5px;
+    background: linear-gradient(180deg,
+            #8c6a24,
+            #d4af37,
+            #fdedbc,
+            #8c6a24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.sngl-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.sngl-footer a:hover {
+    color: #f5d77a;
+}
+
+.footer-bottom {
+    padding-top: 25px;
+    border-top: 1px solid rgba(212, 175, 55, 0.384);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.heart {
+    color: #d4af37;
 }
