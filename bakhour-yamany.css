@@ -309,9 +309,77 @@ nav a:hover {
 }
 
 .cart-btn:hover {
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    color: #d4af37;
+    background: #080808;
+    text-decoration: none;
+    background: linear-gradient(180deg,
+            #8c6a24,
+            #d4af37,
+            #fdedbc,
+            #8c6a24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: 0.3s ease;
     transform: translateY(-2px);
 }
 
+/* ==================PRODUCT ACTIONS================= */
+
+.product-actions {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+}
+
+.back-catalogue {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    background: #080808;
+    color: transparent;
+    background-image: linear-gradient(180deg,
+            #8c6a24,
+            #d4af37,
+            #fdedbc,
+            #8c6a24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.back-catalogue:hover {
+    background: linear-gradient(90deg,
+            #8c6a24,
+            #d4af37,
+            #f5d77a,
+            #d4af37,
+            #8c6a24);
+    color: #000;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #000;
+    background-clip: border-box;
+    transform: translateY(-2px);
+}
+
+.cart-btn {
+    flex: 1;
+    width: auto;
+    max-width: none;
+    margin-top: 0;
+}
 
 /* ==================ABOUT PRODUCT==================== */
 
@@ -381,8 +449,8 @@ nav a:hover {
 
 .recommendation-card img {
     width: 100%;
-    height: 270px;
-    object-fit:cover;
+    height: 290px;
+    object-fit: cover;
 }
 
 .recommendation-card h3 {
@@ -417,26 +485,42 @@ footer {
 
     .header-content {
         flex-direction: column;
+        align-items: center;
         gap: 20px;
+    }
+
+    .logo {
+        width: 100px;
     }
 
     .logo img {
         width: 100px;
-        height: 100px;
+        margin-left: 0;
     }
 
     nav {
         position: static;
         transform: none;
-        gap: 20px;
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 8px;
     }
 
     nav a {
-        font-size: 13px;
+        font-size: 12px;
+        padding: 9px 14px;
+        border-radius: 25px;
     }
 
+    .cart-logo {
+        width: 16px;
+        height: 16px;
+    }
 
     /* PRODUCT */
 
@@ -497,6 +581,31 @@ footer {
     }
 
     .recommendation-card img {
-        height: 200px;
+        height: 290px;
     }
+}
+
+@media (max-width: 768px) {
+
+    .product-info {
+        position: relative;
+        z-index: 10;
+    }
+
+    .size-options,
+    .quantity,
+    .product-actions {
+        position: relative;
+        z-index: 20;
+    }
+
+    .size-btn,
+    .quantity button,
+    .cart-btn,
+    .back-catalogue {
+        position: relative;
+        z-index: 30;
+        pointer-events: auto;
+    }
+
 }
