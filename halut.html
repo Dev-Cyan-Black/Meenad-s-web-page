@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halut | Meenad's Fragrances</title>
+    <link rel="stylesheet" href="halut.css">
+
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/Meenads-logo-square.jpg" alt="Meenad's Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><img src="images/cart-img.png" alt="Cart" class="cart-logo"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- PRODUCT -->
+
+    <main>
+
+        <section class="product-section">
+
+            <!-- PRODUCT IMAGE -->
+            <div class="product-image">
+                <img src="images/Halut.jpg" alt="Halut">
+            </div>
+
+
+            <!-- PRODUCT INFORMATION -->
+            <div class="product-info">
+                <p class="product-type">TURAREN WUTA</p>
+                <h1>Halut</h1>
+
+                <div class="gold-line"></div>
+                <p class="description">
+                    Discover the beautiful aroma of Bakhour Yamany,
+                    a captivating fragrance created to fill your space
+                    with a warm and unforgettable scent.
+                </p>
+
+
+                <!-- SIZE -->
+
+                <h3>Choose your size</h3>
+
+                <div class="size-options">
+                    <button class="size-btn" data-size="50ml" data-price="2500">
+                        <span>50ml</span>
+                        <strong>₦2,500</strong>
+                    </button>
+
+                    <button class="size-btn" data-size="100ml" data-price="5000">
+                        <span>100ml</span>
+                        <strong>₦5,000</strong>
+                    </button>
+
+                    <button class="size-btn" data-size="250ml" data-price="12500">
+                        <span>250ml</span>
+                        <strong>₦12,500</strong>
+                    </button>
+
+                    <button class="size-btn" data-size="500ml" data-price="25000">
+                        <span>500ml</span>
+                        <strong>₦25,000</strong>
+                    </button>
+                </div>
+
+
+                <!-- SELECTED PRICE -->
+
+                <div class="selected-product">
+                    <span>Selected:</span>
+                    <strong id="selected-size">
+                        Select a size
+                    </strong>
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="quantity-section">
+                    <h3>Quantity</h3>
+
+                    <div class="quantity">
+                        <button id="minus">−</button>
+                        <span id="quantity">1</span>
+                        <button id="plus">+</button>
+                    </div>
+                </div>
+
+
+                <!-- ADD TO CART -->
+
+                <div class="product-actions">
+
+                    <button class="cart-btn">
+                        Add to Cart
+                    </button>
+
+                    <a href="catalogue.html" class="back-catalogue">
+                        ← Back to Catalogue
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about-product">
+            <p class="section-label">DISCOVER THE SCENT</p>
+            <h2>About Halut</h2>
+
+            <div class="gold-line center"></div>
+            <p>
+                Bakhour Yamany brings a distinctive and inviting fragrance
+                to your surroundings. Whether you're relaxing at home,
+                welcoming guests, or simply enjoying a beautiful atmosphere,
+                its aroma adds a special touch to the space.
+            </p>
+        </section>
+
+
+        <!-- RECOMMENDATIONS -->
+
+        <section class="recommendations">
+            <p class="section-label">EXPLORE MORE</p>
+            <h2>You May Also Like</h2>
+
+            <div class="gold-line center"></div>
+            <div class="recommendation-grid">
+                <a href="sandal-muhabba.html" class="recommendation-card">
+                        <img src="images/Meenad's-signature.jpg" alt="Sandal Muhabba">
+                        <h3>Sandal Muhabba</h3>
+                </a>
+
+                <a href="sandal-plush.html" class="recommendation-card">
+                        <img src="images/Hano.jpg" alt="Sandal Plush">
+                        <h3>Sandal Plush</h3>
+                </a>
+
+                <a href="meenads-signature.html" class="recommendation-card">
+                    <img src="images/Meenad's-signature.jpg" alt="Meenad's Signature">
+                    <h3>Meenad's Signature</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Where tradition meets unforgettable fragrance.</p>
+        <p class="copyright">
+            © 2026 Meenad's Fragrances. All rights reserved.
+        </p>
+    </footer>
+    <script src="halut.js"></script>
+</body>
+
+</html>
