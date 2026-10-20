@@ -13,8 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-
+<body
+    data-product-name="Gab-Gab"
+    data-product-image="images/Gab-Gab.jpg"
+>
     <!-- HEADER -->
 
     <header>
@@ -26,8 +28,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#"><img src="images/cart-img.png" alt="Cart" class="cart-logo"></a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html"><img src="images/cart-img.png" alt="Cart" class="cart-logo"></a></li>
                 </ul>
             </nav>
         </div>
@@ -76,7 +78,7 @@
 
                     <button class="size-btn" data-size="250ml" data-price="12000">
                         <span>250ml</span>
-                        <strong>₦12,000</strong>
+                        <strong>₦12,500</strong>
                     </button>
 
                     <button class="size-btn" data-size="500ml" data-price="25000">
@@ -113,7 +115,7 @@
 
                 <div class="product-actions">
 
-                    <button class="cart-btn">
+                    <button id="add-to-cart" class="cart-btn">
                         Add to Cart
                     </button>
 
@@ -174,7 +176,7 @@
             © 2026 Meenad's Fragrances. All rights reserved.
         </p>
     </footer>
-    <script src="gab-gab.js"></script>
+    <script src="product.js"></script>
 </body>
 
 </html>

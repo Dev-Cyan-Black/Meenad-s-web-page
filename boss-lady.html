@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandal Muhabba | Meenad's Fragrances</title>
-    <link rel="stylesheet" href="sandal-muhabba.css">
+    <link rel="stylesheet" href="boss-lady.css">
 
     <!-- Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-
+<body data-product-name="Boss Lady" data-product-image="images/Boss-Lady.jpg">
     <!-- HEADER -->
 
     <header>
@@ -27,7 +26,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="catalogue.html">Catalogue</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#"><img src="images/cart-img.png" alt="Cart" class="cart-logo"></a></li>
+                    <li><a href="cart.html"><img src="images/cart-img.png" alt="Cart" class="cart-logo"></a></li>
                 </ul>
             </nav>
         </div>
@@ -42,14 +41,14 @@
 
             <!-- PRODUCT IMAGE -->
             <div class="product-image">
-                <img src="images/Sandal-Flakes.jpg" alt="Sandal Muhabba">
+                <img src="images/Boss-Lady.jpg" alt="Boss Lady">
             </div>
 
 
             <!-- PRODUCT INFORMATION -->
             <div class="product-info">
                 <p class="product-type">TURAREN WUTA</p>
-                <h1>Sandal Muhabba</h1>
+                <h1>Boss Lady</h1>
                 <div class="gold-line"></div>
                 <p class="description">
                     Discover the beautiful aroma of Bakhour Yamany,
@@ -70,17 +69,17 @@
 
                     <button class="size-btn" data-size="100ml" data-price="6500">
                         <span>100ml</span>
-                        <strong>₦6,500</strong>
+                        <strong>₦6,000</strong>
                     </button>
 
                     <button class="size-btn" data-size="250ml" data-price="12500">
                         <span>250ml</span>
-                        <strong>₦12,500</strong>
+                        <strong>₦15,000</strong>
                     </button>
 
                     <button class="size-btn" data-size="500ml" data-price="25000">
                         <span>500ml</span>
-                        <strong>₦25,000</strong>
+                        <strong>₦30,000</strong>
                     </button>
                 </div>
 
@@ -112,7 +111,7 @@
 
                 <div class="product-actions">
 
-                    <button class="cart-btn">
+                    <button id="add-to-cart" class="cart-btn">
                         Add to Cart
                     </button>
 
@@ -127,7 +126,7 @@
         <!-- ABOUT -->
         <section class="about-product">
             <p class="section-label">DISCOVER THE SCENT</p>
-            <h2>About Sandal Muhabba</h2>
+            <h2>About Boss Lady</h2>
 
             <div class="gold-line center"></div>
             <p>
@@ -174,7 +173,7 @@
             © 2026 Meenad's Fragrances. All rights reserved.
         </p>
     </footer>
-    <script src="sandal-muhabba.js"></script>
+    <script src="product.js"></script>
 </body>
 
 </html>

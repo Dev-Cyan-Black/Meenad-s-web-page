@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | Meenad's Fragrances</title>
+
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+    <header class="cart-header">
+        <a href="catalogue.html" class="back-link">
+            ← Continue Shopping
+        </a>
+
+        <h1>My Cart</h1>
+        <p>Your favourite fragrances, all in one place.</p>
+    </header>
+
+    <main class="cart-container">
+
+        <section id="cart-items" class="cart-items">
+            <!-- Cart items will appear here -->
+        </section>
+
+        <section class="cart-summary">
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+                <span>Total Items</span>
+                <span id="total-items">0</span>
+            </div>
+
+            <div class="summary-row grand-total">
+                <span>Grand Total</span>
+                <span id="grand-total">₦0</span>
+            </div>
+
+            <button id="clear-cart" class="clear-cart-btn">
+                Clear Cart
+            </button>
+
+            <button id="checkout-btn" class="checkout-btn">
+                Proceed to Checkout
+            </button>
+        </section>
+
+    </main>
+
+    <script>
+        const cartItemsContainer =
+            document.getElementById("cart-items");
+
+        const totalItemsDisplay =
+            document.getElementById("total-items");
+
+        const grandTotalDisplay =
+            document.getElementById("grand-total");
+
+        const clearCartButton =
+            document.getElementById("clear-cart");
+
+        const checkoutButton =
+            document.getElementById("checkout-btn");
+
+        function getCart() {
+            try {
+                const savedCart =
+                    JSON.parse(
+                        localStorage.getItem("meenadsCart")
+                    );
+
+                return Array.isArray(savedCart)
+                    ? savedCart
+                    : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem(
+                "meenadsCart",
+                JSON.stringify(cart)
+            );
+        }
+
+        function formatPrice(price) {
+            return "₦" + Number(price).toLocaleString("en-NG");
+        }
+
+        function renderCart() {
+            const cart = getCart();
+
+            cartItemsContainer.replaceChildren();
+
+            let totalItems = 0;
+            let grandTotal = 0;
+
+            if (cart.length === 0) {
+                const emptyMessage =
+                    document.createElement("div");
+
+                emptyMessage.className = "empty-cart";
+                emptyMessage.textContent =
+                    "Your cart is empty. Explore our fragrances!";
+
+                cartItemsContainer.appendChild(emptyMessage);
+
+                totalItemsDisplay.textContent = "0";
+                grandTotalDisplay.textContent = formatPrice(0);
+
+                checkoutButton.disabled = true;
+                clearCartButton.disabled = true;
+
+                return;
+            }
+
+            checkoutButton.disabled = false;
+            clearCartButton.disabled = false;
+
+            cart.forEach((item, index) => {
+                const quantity = Number(item.quantity) || 1;
+                const price = Number(item.price) || 0;
+                const itemTotal = price * quantity;
+
+                totalItems += quantity;
+                grandTotal += itemTotal;
+
+                const card = document.createElement("article");
+                card.className = "cart-card";
+
+                const image = document.createElement("img");
+                image.className = "cart-product-image";
+                image.alt = item.name || "Fragrance";
+
+                if (item.image) {
+                    image.src = item.image;
+                } else {
+                    image.hidden = true;
+                }
+
+                const details = document.createElement("div");
+                details.className = "cart-product-details";
+
+                const name = document.createElement("h3");
+                name.textContent = item.name;
+
+                const size = document.createElement("p");
+                size.textContent = "Size: " + item.size;
+
+                const unitPrice = document.createElement("p");
+                unitPrice.textContent =
+                    "Price: " + formatPrice(price);
+
+                const quantityControls =
+                    document.createElement("div");
+
+                quantityControls.className = "quantity-controls";
+
+                const minus = document.createElement("button");
+                minus.textContent = "−";
+                minus.type = "button";
+                minus.dataset.action = "minus";
+                minus.dataset.index = index;
+                minus.setAttribute("aria-label", "Decrease quantity");
+
+                const quantityText = document.createElement("span");
+                quantityText.textContent = quantity;
+
+                const plus = document.createElement("button");
+                plus.textContent = "+";
+                plus.type = "button";
+                plus.dataset.action = "plus";
+                plus.dataset.index = index;
+                plus.setAttribute("aria-label", "Increase quantity");
+
+                quantityControls.append(minus, quantityText, plus);
+
+                const lineTotal = document.createElement("p");
+                lineTotal.className = "item-total";
+                lineTotal.textContent =
+                    "Subtotal: " + formatPrice(itemTotal);
+
+                const remove = document.createElement("button");
+                remove.className = "remove-btn";
+                remove.textContent = "Remove";
+                remove.type = "button";
+                remove.dataset.action = "remove";
+                remove.dataset.index = index;
+
+                details.append(
+                    name,
+                    size,
+                    unitPrice,
+                    quantityControls,
+                    lineTotal,
+                    remove
+                );
+
+                card.append(image, details);
+                cartItemsContainer.appendChild(card);
+            });
+
+            totalItemsDisplay.textContent = totalItems;
+            grandTotalDisplay.textContent =
+                formatPrice(grandTotal);
+        }
+
+        cartItemsContainer.addEventListener("click", event => {
+            const button = event.target.closest("button[data-action]");
+
+            if (!button) return;
+
+            const cart = getCart();
+            const index = Number(button.dataset.index);
+            const action = button.dataset.action;
+
+            if (!cart[index]) return;
+
+            if (action === "plus") {
+                cart[index].quantity++;
+            } else if (action === "minus") {
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity--;
+                }
+            } else if (action === "remove") {
+                cart.splice(index, 1);
+            }
+
+            saveCart(cart);
+            renderCart();
+        });
+
+        clearCartButton.addEventListener("click", () => {
+            if (confirm("Are you sure you want to clear your cart?")) {
+                saveCart([]);
+                renderCart();
+            }
+        });
+
+        checkoutButton.addEventListener("click", () => {
+            if (getCart().length > 0) {
+                alert("Your cart is ready for checkout!");
+                // We will connect your actual checkout page here.
+            }
+        });
+
+        renderCart();
+    </script>
+
+</body>
+</html>

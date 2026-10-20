@@ -13,8 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-
+<body
+    data-product-name="Meenad's Exclusive"
+    data-product-image="images/Meenads-Exclusive.jpg"
+>
     <!-- HEADER -->
 
     <header>
@@ -26,8 +28,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#"><img src="images/cart-img.png" alt="Cart" class="cart-logo"></a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html"><img src="images/cart-img.png" alt="Cart" class="cart-logo"></a></li>
                 </ul>
             </nav>
         </div>
@@ -112,7 +114,7 @@
 
                 <div class="product-actions">
 
-                    <button class="cart-btn">
+                    <button id="add-to-cart" class="cart-btn">
                         Add to Cart
                     </button>
 
@@ -174,7 +176,7 @@
             © 2026 Meenad's Fragrances. All rights reserved.
         </p>
     </footer>
-    <script src="meenads-exclusive.js"></script>
+    <script src="product.js"></script>
 </body>
 
 </html>
