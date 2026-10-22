@@ -94,7 +94,7 @@ nav a:hover {
 
 .catalogue-section h1 {
     font-size: 42px;
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: 2px;
     background: linear-gradient(180deg,
             #8c6a24,
@@ -104,6 +104,7 @@ nav a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-transform: uppercase;
 }
 
 .catalogue-section>p {
